@@ -1,4 +1,5 @@
 import java.util.Scanner;
+
 public class ControlFlowExercises {
     public static void main(String[] args) {
 
@@ -81,6 +82,27 @@ public class ControlFlowExercises {
 //            doAgain = scanner.next();
 //        } while (doAgain.equals("y"));
 
+        Scanner scanner = new Scanner(System.in);
+        String doAgain = "";
+                do {
+                    System.out.print("Please enter your numerical grade: ");
+                    int grade = scanner.nextInt();
+
+                    if (grade >= 88) {
+                        System.out.println("You received an A");
+                    } else if (grade >= 80) {
+                        System.out.println("You received a B");
+                    } else if (grade >= 67) {
+                        System.out.println("You received a C");
+                    } else if (grade >= 60) {
+                        System.out.println("You received a D");
+                    } else {
+                        System.out.println("You received a F");
+                    }
+            scanner.nextLine();
+            System.out.println("Would you like to continue? (y/n)");
+            doAgain = scanner.next();
+        } while (doAgain.equals("y"));
 
     }
 }
