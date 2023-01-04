@@ -45,11 +45,10 @@ public class ConsoleExercises {
 
         Scanner widthGet = new Scanner(System.in);
 
-        System.out.println("Enter the length of room: ");
+        System.out.println("Enter the width of room: ");
         String width = widthGet.nextLine();
         int l = Integer.parseInt(length);
         int w = Integer.parseInt(width);
-//        public static int parseInt(String width);
 
         System.out.println("Length: " + l + " and width: " + w);
         System.out.println("Area of Room = " + l*w);
