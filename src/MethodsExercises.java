@@ -1,8 +1,13 @@
+import java.util.Objects;
 import java.util.Scanner;
+import java.lang.Math;
 
 public class MethodsExercises {
     public static Scanner scanner = new Scanner(System.in);
     static String doAgain = "";
+    static int guessCounter = 0;
+    static long randomNumb = (Math.round(Math.random() * 100));
+
 
     public static void multiply() {
         System.out.println("What numbers would you like to multiply? ");
@@ -46,17 +51,15 @@ public class MethodsExercises {
             int userInput = betweenNumber(min, max);
             String factorialString = "";
             long finalFact = 1;
-            for(int i = 1; i <= userInput; i++){
-                if (i == 1){
+            for (int i = 1; i <= userInput; i++) {
+                if (i == 1) {
                     factorialString = factorialString + i;
                     System.out.println(i + "! = " + factorialString + " = " + finalFact);
 
-                }
-                else if (i == userInput) {
+                } else if (i == userInput) {
                     factorialString = i + "! = " + factorialString + " x " + i + " = " + finalFact * i;
                     System.out.println(factorialString);
-                }
-                else {
+                } else {
                     finalFact = finalFact * i;
                     factorialString = factorialString + " x " + i;
                     System.out.println(i + "! = " + factorialString + " = " + finalFact);
@@ -67,6 +70,48 @@ public class MethodsExercises {
         } while (doAgain.equals("y"));
     }
 
+    public static void diceRoll() {
+        System.out.println("How many number of sides on the dice?");
+        int sides = scanner.nextInt();
+        System.out.println("Are you ready to roll? y/n");
+        String answer = scanner.next();
+        if (!answer.equals("y")) {
+            diceRoll();
+        }
+        System.out.println("First roll: " + (Math.round(Math.random() * sides)));
+        System.out.println("Second roll: " + (Math.round(Math.random() * sides)));
+    }
+
+    public static long setRandomNumb(){
+        return (Math.round(Math.random() * 100));
+    }
+    public static void guessingGame() {
+        System.out.println("Guess what number I'm thinking of... 1-100");
+        long randomNumber = setRandomNumb();
+        guessCounter = 0;
+        do {
+            System.out.println(randomNumber);
+            int myGuess = scanner.nextInt();
+            if (guessCounter == 5) {
+                System.out.println("Sorry, you lose! Too many guesses! Want to play again?");
+                doAgain = scanner.next();
+            }
+            else if (myGuess > randomNumber) {
+                System.out.println("LOWER");
+                guessCounter++;
+                System.out.println("That's " + guessCounter + " guesses. Only " + (5 - guessCounter) + " left!");
+            } else if (myGuess < randomNumber) {
+                System.out.println("HIGHER");
+                guessCounter++;
+                System.out.println("That's " + guessCounter + " guesses. Only " + (5 - guessCounter) + " left!");
+            } else if (myGuess == randomNumber) {
+                System.out.println("Good Guess! Want to play again?");
+                doAgain = scanner.next();
+            }
+        } while (!doAgain.equals("n"));
+    }
+
+
 
         public static void main(String[] args) {
 //        addition();
@@ -75,6 +120,8 @@ public class MethodsExercises {
 //        divide();
 //        System.out.println(betweenNumber(1,10));
 //        factorial(1,10);
+//        diceRoll();
+            guessingGame();
 
     }
 
