@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class MethodsExercises {
     public static Scanner scanner = new Scanner(System.in);
-    String doAgain = "";
+    static String doAgain = "";
 
     public static void multiply() {
         System.out.println("What numbers would you like to multiply? ");
@@ -41,26 +41,40 @@ public class MethodsExercises {
         return userInput;
     }
 
-    public static int factorial(int min, int max) {
-//        do {
-            System.out.println("Enter an integer from 1 to 10: ");
-            int userInput = scanner.nextInt();
-            if (userInput < min || userInput > max) {
-                return betweenNumber(min, max);
-            }
+    public static void factorial(int min, int max) {
+        do {
+            int userInput = betweenNumber(min, max);
+            String factorialString = "";
+            long finalFact = 1;
+            for(int i = 1; i <= userInput; i++){
+                if (i == 1){
+                    factorialString = factorialString + i;
+                    System.out.println(i + "! = " + factorialString + " = " + finalFact);
 
-            return userInput;
-            String doAgain = scanner.next();
-//        } while (doAgain.equals("y"))
+                }
+                else if (i == userInput) {
+                    factorialString = i + "! = " + factorialString + " x " + i + " = " + finalFact * i;
+                    System.out.println(factorialString);
+                }
+                else {
+                    finalFact = finalFact * i;
+                    factorialString = factorialString + " x " + i;
+                    System.out.println(i + "! = " + factorialString + " = " + finalFact);
+                }
+            }
+            System.out.println("Do you want to do try a different number? y/n");
+            doAgain = scanner.next();
+        } while (doAgain.equals("y"));
     }
 
-    public static void main(String[] args) {
+
+        public static void main(String[] args) {
 //        addition();
 //        subtract();
 //        multiply();
 //        divide();
 //        System.out.println(betweenNumber(1,10));
-        System.out.println(factorial(1,10));
+//        factorial(1,10);
 
     }
 
