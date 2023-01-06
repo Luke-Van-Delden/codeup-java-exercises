@@ -100,7 +100,7 @@ public class MethodsExercises {
 //        subtract();
 //        multiply();
 //        divide();
-            modulus();
+//            modulus();
 //        System.out.println(betweenNumber(1,10));
 //        factorial(1,10);
 //        diceRoll();
