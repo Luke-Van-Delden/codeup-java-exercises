@@ -37,6 +37,14 @@ public class MethodsExercises {
         System.out.println(x + " divided by " + y + " equals " + (x / y));
     }
 
+    public static void modulus() {
+        System.out.println("What numbers would you like to see the remainder of? ");
+        int x = scanner.nextInt();
+        int y = scanner.nextInt();
+        System.out.println(x + " divided by " + y + " leaves a remainder of " + (x % y));
+    }
+
+
     public static int betweenNumber(int min, int max) {
         System.out.println("Enter a valid integer between 1-10:");
         int userInput = scanner.nextInt();
@@ -85,32 +93,6 @@ public class MethodsExercises {
     public static long setRandomNumb(){
         return (Math.round(Math.random() * 100));
     }
-    public static void guessingGame() {
-        System.out.println("Guess what number I'm thinking of... 1-100");
-        long randomNumber = setRandomNumb();
-        guessCounter = 0;
-        do {
-            System.out.println(randomNumber);
-            int myGuess = scanner.nextInt();
-            if (guessCounter == 5) {
-                System.out.println("Sorry, you lose! Too many guesses! Want to play again?");
-                doAgain = scanner.next();
-            }
-            else if (myGuess > randomNumber) {
-                System.out.println("LOWER");
-                guessCounter++;
-                System.out.println("That's " + guessCounter + " guesses. Only " + (5 - guessCounter) + " left!");
-            } else if (myGuess < randomNumber) {
-                System.out.println("HIGHER");
-                guessCounter++;
-                System.out.println("That's " + guessCounter + " guesses. Only " + (5 - guessCounter) + " left!");
-            } else if (myGuess == randomNumber) {
-                System.out.println("Good Guess! Want to play again?");
-                doAgain = scanner.next();
-            }
-        } while (!doAgain.equals("n"));
-    }
-
 
 
         public static void main(String[] args) {
@@ -118,10 +100,11 @@ public class MethodsExercises {
 //        subtract();
 //        multiply();
 //        divide();
+            modulus();
 //        System.out.println(betweenNumber(1,10));
 //        factorial(1,10);
 //        diceRoll();
-            guessingGame();
+//            guessingGame();
 
     }
 
