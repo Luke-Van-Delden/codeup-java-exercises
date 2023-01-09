@@ -1,6 +1,3 @@
-import java.util.Scanner;
-
-
 public class Person {
     private String name;
 //    public  Scanner scanner = new Scanner(System.in);

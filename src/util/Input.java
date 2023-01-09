@@ -8,7 +8,8 @@ public class Input {
     public Input(){
         this.scanner = new Scanner(System.in);
     }
-    String getString(){
+    public String getString(){
+        System.out.println("Enter a string: ");
         return this.scanner.nextLine();
     }
 
@@ -52,8 +53,8 @@ public class Input {
         System.out.println("type something");
     Input stringer = new Input();
 
-//        String tester = stringer.getString();
-//        System.out.println(tester);
+        String tester = stringer.getString();
+        System.out.println(tester);
 
 //        System.out.println(stringer.yesNo());
 
@@ -61,8 +62,8 @@ public class Input {
 
 //        System.out.println("Your int is " + stringer.getInt());
 
-        System.out.println(stringer.getDouble(0,10) + " is a double between 1 and 10");
-
-        System.out.println(stringer.getDouble() + "is your double");
+//        System.out.println(stringer.getDouble(0,10) + " is a double between 1 and 10");
+//
+//        System.out.println(stringer.getDouble() + "is your double");
     }
     }
