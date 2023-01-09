@@ -13,7 +13,7 @@ public class Input {
     }
 
 
-    boolean yesNo(){
+    public boolean yesNo(){
         if (this.scanner.nextLine().equals("y")){
             return true;
         }
@@ -22,7 +22,7 @@ public class Input {
         }
     }
 
-    int getInt(int min, int max){
+    public int getInt(int min, int max){
         int userInput = this.scanner.nextInt();
         if (userInput > min && userInput < max){
             return userInput;
@@ -32,11 +32,11 @@ public class Input {
         }
     }
 
-     int getInt(){
+     public int getInt(){
         return this.scanner.nextInt();
     }
 
-    double getDouble(double min, double max){
+    public double getDouble(double min, double max){
         double userInput = this.scanner.nextDouble();
         if (userInput > min && userInput < max){
             return userInput;
@@ -45,7 +45,7 @@ public class Input {
             return getDouble(0, 10);
         }
     }
-    double getDouble(){
+    public double getDouble(){
         return this.scanner.nextDouble();
     }
     public static void main(String[] args) {
