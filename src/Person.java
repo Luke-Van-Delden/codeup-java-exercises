@@ -47,5 +47,10 @@ public class Person {
 //        person2.setName("Jane");
 //        System.out.println(person1.getName());
 //        System.out.println(person2.getName());
+        class ArithmeticSample {
+            public static void main(String[] args) {
+                int x = 5 * 4 % 3;
+                System.out.println(x);
+            }}
     }
 }
