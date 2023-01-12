@@ -5,30 +5,22 @@ import java.util.Scanner;
 
 public class GradesApplication {
     public static void main(String[] args) {
-        ArrayList<Integer> lgrades = new ArrayList<>();
-        lgrades.add(100);
-        lgrades.add(100);
-        lgrades.add(100);
-        ArrayList<Integer> bgrades = new ArrayList<>();
-        bgrades.add(100);
-        bgrades.add(50);
-        bgrades.add(25);
-        bgrades.add(0);
-        ArrayList<Integer> kgrades = new ArrayList<>();
-        kgrades.add(100);
-        kgrades.add(99);
-        kgrades.add(98);
-        kgrades.add(97);
-        ArrayList<Integer> fgrades = new ArrayList<>();
-        fgrades.add(100);
-        fgrades.add(90);
-        fgrades.add(80);
-        fgrades.add(70);
-
-        Student Luke = new Student("Luke", lgrades);
-        Student Brian = new Student("Brian", bgrades);
-        Student Kara = new Student("Kara", kgrades);
-        Student Frankie = new Student("Frankie", fgrades);
+        Student Luke = new Student("Luke");
+        Luke.addGrade(98);
+        Luke.addGrade(100);
+        Luke.addGrade(100);
+        Student Brian = new Student("Brian");
+        Brian.addGrade(100);
+        Brian.addGrade(100);
+        Brian.addGrade(100);
+        Student Kara = new Student("Kara");
+        Kara.addGrade(99);
+        Kara.addGrade(99);
+        Kara.addGrade(9);
+        Student Frankie = new Student("Frankie");
+        Frankie.addGrade(34);
+        Frankie.addGrade(34);
+        Frankie.addGrade(100);
 
         HashMap<String, Student> students = new HashMap<>();
         students.put("LukeTheDuke", Luke);

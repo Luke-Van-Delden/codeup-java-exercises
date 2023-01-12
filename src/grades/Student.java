@@ -8,9 +8,9 @@ public class Student {
     private double total;
 
 
-    public Student(String name, ArrayList<Integer> grades) {
+    public Student(String name) {
         this.name = name;
-        this.grades = grades;
+        this.grades = new ArrayList<>();
     }
 
     // returns the student's name
