@@ -9,10 +9,13 @@ public class Input {
         this.scanner = new Scanner(System.in);
     }
     public String getString(){
-        System.out.println("Enter a string: ");
+        System.out.print("Provide Input >");
         return this.scanner.nextLine();
     }
 
+//    public static String notAnIntError() throws Exception{
+//
+//    }
 
     public boolean yesNo(){
         if (this.scanner.nextLine().equals("y")){
@@ -34,7 +37,15 @@ public class Input {
     }
 
      public int getInt(){
-        return this.scanner.nextInt();
+        System.out.print("(Int)");
+         try {
+             return Integer.valueOf(getString());
+         }
+         catch (Exception e){
+             e.printStackTrace();
+             System.out.println("Testing dont do good");
+             return getInt();
+         }
     }
 
     public double getDouble(double min, double max){
@@ -47,13 +58,23 @@ public class Input {
         }
     }
     public double getDouble(){
-        return this.scanner.nextDouble();
+        System.out.print("(Double)");
+
+        try {
+           return Double.valueOf(getString());
+        }
+        catch (Exception e){
+            e.printStackTrace();
+            System.out.println("Testing dont do good");
+            return getDouble();
+        }
+//        return this.scanner.nextDouble();
     }
     public static void main(String[] args) {
         System.out.println("type something");
     Input stringer = new Input();
 
-        String tester = stringer.getString();
+        int tester = stringer.getInt();
         System.out.println(tester);
 
 //        System.out.println(stringer.yesNo());
