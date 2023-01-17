@@ -41,7 +41,7 @@ public class Input {
          try {
              return Integer.valueOf(getString());
          }
-         catch (Exception e){
+         catch (NumberFormatException e){
              e.printStackTrace();
              System.out.println("Testing dont do good");
              return getInt();
@@ -63,7 +63,7 @@ public class Input {
         try {
            return Double.valueOf(getString());
         }
-        catch (Exception e){
+        catch (NumberFormatException e){
             e.printStackTrace();
             System.out.println("Testing dont do good");
             return getDouble();
